@@ -41,6 +41,8 @@ class AgentState(TypedDict):
     end_date: str
     selected_package: int
     missing_info: list[str]
+    
+## PYDANTIC MODELS    
 
 
 class TripDetails(BaseModel):
@@ -67,6 +69,7 @@ structured_llm_2 = llm.with_structured_output(ApprovalDecision)
 structured_llm_3 = llm.with_structured_output(PackageSelection)
 
 
+## FUNCTIONS
 def chatnode(state: AgentState):
 
     # 1. missing info check
@@ -76,7 +79,7 @@ def chatnode(state: AgentState):
         question = "I need a few more details: " + ", ".join(missing) + "."
         return {"messages": [AIMessage(content=question)]}
 
-    # 2. approval checks  ← ADD HERE
+    # 2. approval checks 
 
     if state.get("approved"):
         return {
@@ -363,6 +366,7 @@ def extract_number(value):
     numbers = "".join(ch for ch in str(value) if ch.isdigit() or ch == ".")
     return float(numbers) if numbers else 0
 
+## GRAPH SETUP
 
 graph = StateGraph(AgentState)
 

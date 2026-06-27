@@ -186,12 +186,12 @@ The following files are intentionally excluded from version control:
 
 ## Future Improvements
 
-* Flight booking integration
-* Hotel booking integration
-* Currency conversion
+* More conversational AI interactions for a natural travel planning experience
 * User authentication
 * Trip history
 * Email itinerary sharing
+* Currency conversion for accurate total package cost
+
 
 ---
 
