@@ -1,0 +1,10 @@
+.env
+token.json
+credentials.json
+chatbot.db
+chatbot.db-shm
+chatbot.db-wal
+chatbot.db-x-checkpoints-1-checkpoint.bin
+__pycache__/
+ai_env/
+*.pem
