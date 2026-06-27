@@ -1,44 +1,47 @@
-#  TravelMind – AI Travel Planning Agent
+# TravelMind – AI Travel Planning Agent
 
-TravelMind is an AI-powered travel planning assistant that helps users generate personalized travel packages based on their destination, travel dates, budget, and number of travelers.
+TravelMind is an AI-powered travel planning application that helps users plan trips based on their destination, travel dates, budget, and number of travelers.
 
-The application uses LangGraph to orchestrate an AI agent that searches for flights and hotels, recommends multiple travel packages, and allows users to approve a package and automatically create a Google Calendar event.
+Using **LangGraph**, the AI agent coordinates multiple tools to search for flights and hotels, generate personalized travel packages, and create a Google Calendar event after the user approves a package.
 
-##  Live Demo
+---
+
+## Live Demo
 
 **Website:** https://travelmind.software
 
 ---
 
-##  Features
+## Features
 
-* 🤖 AI-powered travel planning
-* ✈️ Flight search integration
-* 🏨 Hotel search integration
-* 💰 Budget-aware package recommendations
-* 📦 Multiple package options
-* 📅 Google Calendar event creation
-* 🧠 Conversation memory using LangGraph
-* 🖼️ Destination images
-* 🌐 Custom domain with HTTPS
-* 🔄 Automatic deployment using GitHub Actions
+* AI-powered travel planning
+* Multi-step AI workflow using LangGraph
+* Flight search integration
+* Hotel search integration
+* Budget-aware travel package recommendations
+* Multiple travel package options
+* Google Calendar event creation
+* Conversation memory
+* Destination image cards
+* Automatic deployment with GitHub Actions
+* Production deployment on Microsoft Azure
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 ### Frontend
 
 * Streamlit
 
+### Backend
+
+* Python
+
 ### AI Framework
 
 * LangGraph
 * LangChain
-
-### Backend
-
-* Python
 
 ### APIs
 
@@ -46,17 +49,17 @@ The application uses LangGraph to orchestrate an AI agent that searches for flig
 * Hotel API
 * Google Calendar API
 
-### Deployment
+### Deployment & DevOps
 
 * Microsoft Azure Ubuntu VM
 * Nginx Reverse Proxy
 * GitHub Actions (CI/CD)
 * Let's Encrypt SSL
-* Custom Domain
+* Custom Domain (travelmind.software)
 
 ---
 
-##  Project Architecture
+## Project Architecture
 
 ```text
 User
@@ -72,7 +75,7 @@ LangGraph AI Agent
    └── Google Calendar Tool
    │
    ▼
-Travel Packages
+Travel Package Recommendations
    │
    ▼
 Package Approval
@@ -83,22 +86,22 @@ Google Calendar Event
 
 ---
 
-## ⚙️ Local Installation
+## Local Installation
 
-Clone the repository:
+Clone the repository
 
 ```bash
-git clone https://github.com/zainameen335/travel-agent.git
-cd travel-agent
+git clone https://github.com/zainameen335/travelmind.git
+cd travelmind
 ```
 
-Create a virtual environment:
+Create a virtual environment
 
 ```bash
 python -m venv ai_env
 ```
 
-Activate the environment:
+Activate the environment
 
 ### Windows
 
@@ -112,7 +115,7 @@ ai_env\Scripts\activate
 source ai_env/bin/activate
 ```
 
-Install dependencies:
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -120,7 +123,7 @@ pip install -r requirements.txt
 
 Create a `.env` file and configure your API keys.
 
-Run the application:
+Run the application
 
 ```bash
 streamlit run frontend.py
@@ -128,62 +131,71 @@ streamlit run frontend.py
 
 ---
 
-##  Deployment
+## Production Deployment
 
-This project is deployed on:
+TravelMind is deployed using a production-style deployment pipeline.
 
-* Microsoft Azure Ubuntu VM
+### Infrastructure
+
+* Microsoft Azure Ubuntu Virtual Machine
 * Nginx Reverse Proxy
 * HTTPS using Let's Encrypt
-* Custom Domain
-* GitHub Actions CI/CD for automatic deployment
+* Custom Domain (travelmind.software)
 
-Every push to the `main` branch automatically deploys the latest version to the Azure server.
+### CI/CD
+
+GitHub Actions automatically deploys the latest version to the Azure VM whenever changes are pushed to the `main` branch.
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```text
-travel-agent/
+travelmind/
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml
 │
 ├── assets/
+│
 ├── tools/
 │   ├── flight_tool.py
 │   ├── hotel_tool.py
 │   └── calendar_tool.py
 │
-├── frontend.py
-├── backend.py
 ├── agent.py
+├── backend.py
+├── frontend.py
 ├── requirements.txt
 └── README.md
 ```
 
 ---
 
-##  Environment Variables
+## Environment Variables
 
-The following sensitive files are excluded from version control:
+The following files are intentionally excluded from version control:
 
 * `.env`
 * `credentials.json`
 * `token.json`
+* `*.pem`
 
 ---
 
-## 📌 Future Improvements
+## Future Improvements
 
-* Currency conversion for accurate total package cost
 * Flight booking integration
 * Hotel booking integration
+* Currency conversion
 * User authentication
 * Trip history
 * Email itinerary sharing
 
 ---
 
-##  Author
+## Author
 
 **Zain Ameen**
 
@@ -191,3 +203,8 @@ GitHub: https://github.com/zainameen335
 
 LinkedIn: https://www.linkedin.com/in/zainameen335/
 
+---
+
+## License
+
+This project is licensed under the MIT License.
